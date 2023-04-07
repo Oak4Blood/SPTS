@@ -1,0 +1,141 @@
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Crimson Hub Project 2", _G.theme)
+local Tab = Window:NewTab("Auto")
+local Section = Tab:NewSection("Auto Farm")
+
+Section:NewToggle("Fist", " ", function(state)
+    if state then
+        AutoFist = state
+while AutoFist == true do
+
+wait()
+
+local args = {
+    [1] = {
+        [1] = "Add_FS_Request"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+
+end
+    else
+
+       AutoFist = state
+
+ print('Repeat Stopped')
+wait()
+
+end
+end)
+
+Section:NewToggle("Health", " ", function(state)
+    if state then
+        AutoHealth = state
+while AutoHealth == true do
+
+wait()
+
+local args = {
+    [1] = {
+        [1] = "+BT1"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+
+end
+    else
+
+       AutoHealth = state
+
+end
+end)
+
+Section:NewToggle("Speed", " ", function(state)
+    if state then
+        AutoSpeed = state
+while AutoSpeed == true do
+
+wait()
+local args = {
+    [1] = {
+        [1] = "Add_MS_Request"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+    else
+
+       AutoSpeed = state
+
+ print('Repeat Stopped')
+wait()
+
+end
+end)
+
+Section:NewToggle("Jump", " ", function(state)
+    if state then
+        AutoJump = state
+while AutoJump == true do
+
+wait()
+local args = {
+    [1] = {
+        [1] = "Add_JF_Request"
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+    else
+
+       AutoJump = state
+
+ print('Repeat Stopped')
+wait()
+
+end
+end)
+
+Section:NewToggle("Physical", " ", function(state)
+    if state then
+        AutoPhy = state
+
+while AutoPhy == true do
+
+wait()
+local args = {
+    [1] = {
+        [1] = "Meditation_Request",
+        [2] = true
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+    else
+
+       AutoPhy = state
+
+local args = {
+    [1] = {
+        [1] = "Meditation_Request",
+        [2] = false
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+wait()
+
+end
+end)
